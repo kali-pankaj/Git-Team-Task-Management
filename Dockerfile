@@ -1,11 +1,5 @@
-FROM python:latest
-
+FROM nginx:1.30
 WORKDIR /home
-
-COPY . /home/
-
-EXPOSE 8081:80
-
-RUN pip install python3
-
-CMD [ "python" ]
+COPY . /etc/nginx/nginx.html
+EXPOSE 80
+CMD [ "ngins", "-f", "demon" ]
